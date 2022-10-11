@@ -1,5 +1,13 @@
 ﻿// Задача 1: Напишите 
 // Сумма чисел от 1 до number
+
+int InputNumber(string message)
+{
+    Console.Write(message);
+    string str = Console.ReadLine();
+    return int.Parse(str);
+}
+
 int SumNumbers(int number)
 {
     int sum = 0;        // Тут накапливаем сумму
