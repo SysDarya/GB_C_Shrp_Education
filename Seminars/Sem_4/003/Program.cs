@@ -3,7 +3,7 @@
 int InputNumber(string message)
 {
     Console.Write(message);
-    string str = Console.ReadLine();
+    string str = Console.ReadLine() ?? "0";
     return int.Parse(str);
 }
 
