@@ -7,7 +7,7 @@ void FillArray (int[] collection)
     int index = 0;
     while (index < length)
     {
-        collection[index] = new Random().Next(1,101);
+        collection[index] = new Random().Next(0,5);
         index++;
     }
 }
@@ -26,9 +26,9 @@ void PrintArray (int[] collection)
 void FindAlmoslMax (int[] collection)
 {
     int leng = collection.Length;
-    int max = 0;
+    int max = collection[0];
     int SecondMax = 0;
-    for (int ind = 0; ind < leng; ind++)
+    for (int ind = 1; ind < leng; ind++)
     {
         if (max < collection[ind])
         {
