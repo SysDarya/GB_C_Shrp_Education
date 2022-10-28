@@ -1,8 +1,8 @@
 ﻿// Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
-int[,] CreateMatrix(int y,int x, int minLimit, int maxLimit)
+float[,] CreateMatrix(int y,int x, int minLimit, int maxLimit)
 {
-    int[,] matrix = new int[y,x];
+    float[,] matrix = new float[y,x];
     Random rnd = new Random();
     for (int j = 0; j < matrix.GetLength(0); j++)
     {
@@ -14,7 +14,7 @@ int[,] CreateMatrix(int y,int x, int minLimit, int maxLimit)
     return matrix;
 }
 
-void PrintMatrix(int[,] matrix)
+void PrintMatrix(float[,] matrix)
 {
     for (int j = 0; j < matrix.GetLength(0); j++)
     {
@@ -26,14 +26,14 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-double[] FindSum (int[,] matrix)
+double[] FindSum (float[,] matrix)
 {
     double[] array = new double [matrix.GetLength(1)];
     int c = 0;
     for (int i = 0; i < matrix.GetLength(1); i++)
     {
         double average = 0;
-        int sum = 0;
+        float sum = 0;
         for (int j = 0; j < matrix.GetLength(0); j++)
         {
             sum = sum + matrix[j,i];
@@ -65,7 +65,7 @@ int y = Prompt("Узнаем размер матрицы. Введите кол�
 int x = Prompt("Узнаем размер матрицы. Введите количество столбцов > ");
 int min = Prompt("Заполняем матрицу. Введите минимальный предел > ");
 int max = Prompt("Заполняем матрицу. Введите максимальный предел > ");
-int[,] myMatrix = CreateMatrix(y, x, min, max);
+float[,] myMatrix = CreateMatrix(y, x, min, max);
 Console.WriteLine("Ваша матрица > ");
 PrintMatrix(myMatrix);
 double[] result = FindSum(myMatrix);
