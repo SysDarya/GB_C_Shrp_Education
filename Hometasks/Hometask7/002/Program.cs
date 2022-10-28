@@ -29,7 +29,7 @@ void PrintMatrix(int[,] matrix)
 
 bool FindElement(int[,] matrix, int a, int b)
 {
-    if (a <= matrix.GetLength(0) && a > -1 && b <= matrix.GetLength(1) && b > -1)
+    if (a < matrix.GetLength(0) && a > -1 && b < matrix.GetLength(1) && b > -1)
     {
         return true;
     }
@@ -43,14 +43,16 @@ int Prompt(string message)
     return number;
 }
 
+int y = Prompt("Узнаем размер матрицы. Введите количество строк > ");
+int x = Prompt("Узнаем размер матрицы. Введите количество столбцов > ");
 int min = Prompt("Заполняем матрицу. Введите минимальный предел > ");
 int max = Prompt("Заполняем матрицу. Введите максимальный предел > ");
-int[,] myMatrix = CreateMatrix(4, 5, min, max);
+int[,] myMatrix = CreateMatrix(y, x, min, max);
 Console.WriteLine("Ваша матрица > ");
 PrintMatrix(myMatrix);
-int y = Prompt("Введите строку > ");
-int x = Prompt("Введите столбец > ");
-if (FindElement(myMatrix, y, x) == true)
+int a = Prompt("Введите индекс строки (от 0) > ");
+int b = Prompt("Введите индекс столбца (от 0) > ");
+if (FindElement(myMatrix, a, b) == true)
 {
     Console.WriteLine($"Элемент под данным индексом есть и он равен {myMatrix[y,x]}.");
 }

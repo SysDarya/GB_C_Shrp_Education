@@ -26,26 +26,26 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-float[] FindSum (int[,] matrix)
+double[] FindSum (int[,] matrix)
 {
-    float[] array = new float [matrix.GetLength(1)];
+    double[] array = new double [matrix.GetLength(1)];
     int c = 0;
     for (int i = 0; i < matrix.GetLength(1); i++)
     {
-        // int average = 0;
+        double average = 0;
         int sum = 0;
         for (int j = 0; j < matrix.GetLength(0); j++)
         {
             sum = sum + matrix[j,i];
         }
-        // average = sum / matrix.GetLength(0);
-        array[c] = sum;
+        average = sum / matrix.GetLength(0);
+        array[c] = average;
         c++;
     }
     return array;
 }
 
-void PrintArray(float[] array)
+void PrintArray(double[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
@@ -68,6 +68,6 @@ int max = Prompt("Заполняем матрицу. Введите максим
 int[,] myMatrix = CreateMatrix(y, x, min, max);
 Console.WriteLine("Ваша матрица > ");
 PrintMatrix(myMatrix);
-float[] result = FindSum(myMatrix);
+double[] result = FindSum(myMatrix);
 Console.WriteLine("Среднее арифметическое столбцов равно > ");
 PrintArray(result);
