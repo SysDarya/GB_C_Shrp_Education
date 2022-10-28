@@ -31,19 +31,9 @@ bool FindElement(int[,] matrix, int a, int b)
 {
     if (a <= matrix.GetLength(0) && a > -1 && b <= matrix.GetLength(1) && b > -1)
     {
-        for (int j = 0; j < matrix.GetLength(0); j++)
-        {
-            for (int i = 0; i < matrix.GetLength(1); i++)
-            {
-                if(matrix[j,i] == matrix[a,b])
-                {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return true;
     }
-
+    return false;
 }
 
 int Prompt(string message)
